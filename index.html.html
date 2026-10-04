@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CipherLab – Interactive Symmetric Cryptography Laboratory</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <button class="brand" onclick="showDashboard()">CipherLab</button>
+  <nav id="tabs" class="tabs" hidden></nav>
+</header>
+
+<main>
+  <!-- Dashboard view -->
+  <section id="dashboard">
+    <div class="hero">
+      <h1>CipherLab</h1>
+      <p class="subtitle">Interactive Symmetric Cryptography Laboratory</p>
+      <p class="intro">Explore five classical symmetric ciphers through interactive encryption and decryption.
+        Enter a message, provide the required key, and observe how each algorithm transforms the data step by step.</p>
+      <p class="algo-note">Algorithms implemented: Playfair • Hill • Vigenère • One-Time Pad • Rail Fence</p>
+    </div>
+
+    <h2 class="section-title">Cryptographic Algorithms</h2>
+    <div id="cards" class="cards">
+      <article class="card algo">
+        <div class="sym">PF</div>
+        <h3>Playfair Cipher</h3>
+        <small>Digraph substitution</small>
+        <p>Digraph substitution using a 5×5 key matrix.</p>
+        <button class="explore" onclick="openWorkspace('playfair')">Explore Cipher →</button>
+      </article>
+      <article class="card algo">
+        <div class="sym">H</div>
+        <h3>Hill Cipher</h3>
+        <small>Matrix substitution</small>
+        <p>Matrix-based substitution using modular arithmetic.</p>
+        <button class="explore" onclick="openWorkspace('hill')">Explore Cipher →</button>
+      </article>
+      <article class="card algo">
+        <div class="sym">V</div>
+        <h3>Vigenère Cipher</h3>
+        <small>Polyalphabetic substitution</small>
+        <p>Polyalphabetic substitution using a repeating keyword.</p>
+        <button class="explore" onclick="openWorkspace('vigenere')">Explore Cipher →</button>
+      </article>
+      <article class="card algo">
+        <div class="sym">OTP</div>
+        <h3>One-Time Pad</h3>
+        <small>Perfect-secrecy cipher</small>
+        <p>Symmetric encryption using a message-length key.</p>
+        <button class="explore" onclick="openWorkspace('otp')">Explore Cipher →</button>
+      </article>
+      <article class="card algo">
+        <div class="sym">RF</div>
+        <h3>Rail Fence Cipher</h3>
+        <small>Transposition</small>
+        <p>Transposition cipher based on a zig-zag pattern.</p>
+        <button class="explore" onclick="openWorkspace('rail')">Explore Cipher →</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- Workspace view (filled by script.js for the chosen cipher) -->
+  <section id="workspace" hidden></section>
+</main>
+
+<footer class="site-footer">Academic Project — Implementation of Symmetric Cryptography</footer>
+<script src="script.js"></script>
+</body>
+</html>
